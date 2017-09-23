@@ -1,0 +1,36 @@
+num = as.integer(readline(prompt="Enter a number: "))
+
+flag = 0
+
+if(num > 1) {
+  
+  flag = 1
+  for(i in 2:(num-1)) {
+    if ((num %% i) == 0) {
+      flag = 0
+      break
+    }
+  }
+} 
+
+if(num == 2)    flag = 1
+
+if(flag == 1) {
+  print(paste(num,"is a prime number"))
+} else {
+  print(paste(num,"is not a prime number"))
+}
+
+
+
+
+library(stringr)
+library(dplyr)
+words = c("above", "unit", "Under")
+for(alphabet in words){
+  if((str_detect(alphabet, "a"))==TRUE && ((str_detect(alphabet, "u"))==TRUE)){
+    cat(alphabet, ": both u and a appear in each words \n")
+  }else{
+    cat(alphabet, ": both u and a doesn't' appear in each words \n")
+  }
+}
